@@ -1,6 +1,8 @@
 title: CuttleFish IO
 description: A blog about code, ideas, and everything in between.
 lang: en-US
+url: "https://djvaroli.github.io"
+baseurl: "/the-cuttlefish-blog"
 
 # Build settings
 markdown: kramdown
