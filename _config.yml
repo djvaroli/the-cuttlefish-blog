@@ -1,0 +1,62 @@
+title: CuttleFish IO
+description: A blog about code, ideas, and everything in between.
+lang: en-US
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Pagination
+paginate: 6
+paginate_path: "/page/:num/"
+
+# Navigation
+navigation:
+  - text: Home
+    url: /
+  - text: About
+    url: /about/
+  - text: Tags
+    url: /tags/
+
+# Accent color
+accent_color: "#9b72cf"
+
+# Footer
+footer:
+  has_social: true
+  content: "&copy; 2026 CuttleFish IO. All rights reserved."
+
+# Include pages from _pages directory
+include:
+  - _pages
+
+# Default front matter
+defaults:
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+# Sass
+sass:
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - vendor

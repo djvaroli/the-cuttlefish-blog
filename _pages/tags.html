@@ -1,0 +1,31 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<main class="main-content fadeInDown delay_075s">
+  <article class="post">
+    <h1 class="post-title">Tags</h1>
+    <div class="post-content">
+      {% capture tags %}
+        {% for tag in site.tags %}
+          {{ tag[0] }}
+        {% endfor %}
+      {% endcapture %}
+      {% assign sortedtags = tags | split:' ' | sort %}
+
+      {% for tag in sortedtags %}
+        <h2 id="{{ tag | cgi_escape }}">{{ tag }}</h2>
+        <ul>
+          {% for post in site.tags[tag] %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <time datetime="{{ post.date | date: "%Y-%m-%d" }}"> &mdash; {{ post.date | date: "%B %-d, %Y" }}</time>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  </article>
+</main>
